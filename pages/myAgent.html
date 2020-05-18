@@ -250,7 +250,6 @@
 				// 获取我的代理数据
 				getMyAgentTeamDataCount(mui, function(data) {
 					if (data.code == 200) {
-						console.log(JSON.stringify(data))
 						$('#teamsNum').text(data.data.teamsNum); //团队人数
 						$('#machinePurchase').text(data.data.machinePurchase); //机具采购量
 						$('#activeNum').text(data.data.activeNum); //机具激活量

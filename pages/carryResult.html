@@ -48,11 +48,11 @@
 					<img id="tubiao" style="width: 1.26rem;height: 1.26rem;">
 				</div>
 				<div id="staty" style="margin-top: 0.1rem;">
-					提现受理中
+					提现审核中
 				</div> 
-				<div id="time">
+				<!-- <div id="time">
 					预计2小时内到账
-				</div>
+				</div> -->
 			</div>
 			<div class=" font_size28 font_color33" style="width: 7rem;margin-left: .5rem;margin-top: 0.8rem;">
 				<div class="div_display margin_top3">
@@ -60,7 +60,7 @@
 						提现金额:
 					</div>
 					<div class="">
-						<span id="amount" style="font-family: sans-serif;"></span> (手续费: <span id="handfree" style="font-family: sans-serif;"></span>)
+						<span id="amount" style="font-family: sans-serif;"></span> (手续费: <span id="handfree" style="font-family: sans-serif;"></span>税费: <span id="taxes" style="font-family: sans-serif;"></span>)
 					</div>
 				</div>
 				<div class="div_display margin_top3">
@@ -140,6 +140,7 @@
 						$('#orderNo').text(data.data.orderNo);
 						$('#createTime').text(data.data.createTime);
 						$('#handfree').text('¥' + data.data.handfree);
+						$('#taxes').text('¥' + data.data.taxes);
 						$('#actualAmount').text('¥' + data.data.actualAmount);
 						$('#taxes').text('¥' + data.data.taxes);
 						$('#bankName').text(data.data.bankName);
@@ -172,6 +173,8 @@
 					}
 				})
 				
+				
+				// 
 				/* if (payParams == "成功") {
 				 	$(".paySucceed").css("display", "block");
 				 	$(".payError").css("display", "none");

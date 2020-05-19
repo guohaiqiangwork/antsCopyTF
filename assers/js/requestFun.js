@@ -6,7 +6,7 @@
  */
 // 全局变量定义  
 window.requserUrl = 'http://123.56.62.211:8080'; //测试环境
-// window.requserUrl = 'http://192.168.1.101'; //
+
 window.requserUrlShard = 'http://www.bjxrkj.com/';
 // 郭海强 start
 /**

@@ -22,7 +22,7 @@
 		<header class="header_white" style="height:1rem ;background: linear-gradient(to right, #FFD2B0, #FF7467);">
 			<div class="div_display" style="margin-top: 0.09rem;">
 				<!-- 消息 -->
-				<div class="header_title_left " id="messageId" >
+				<div class="header_title_left " id="messageId">
 					<div class=" header_title_leftT " style="margin-top: 0.11rem;"></div>
 					<img src="../assers/image/homeMsg.png" class="header_title_leftI">
 				</div>
@@ -130,7 +130,7 @@
 
 			<div class="div_display">
 				<div class="my__img goMyOrder" data-id="100">
-					<div class="font_colorf2 margin_left3 margin_top7 " >
+					<div class="font_colorf2 margin_left3 margin_top7 ">
 						商城订单
 					</div>
 				</div>
@@ -518,6 +518,8 @@
 				})
 				/* 会员权益 */
 				$("#equityId").on("tap", function() {
+					tipShow('敬请期待')
+					return
 					$$.openWindow({
 						url: '../pages/equity.html',
 						id: 'equity',

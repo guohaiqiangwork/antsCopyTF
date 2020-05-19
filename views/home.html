@@ -856,7 +856,9 @@
 			});
 
 			$('#activity_img').on('tap', '.goActivity', function() {
-				console.log($(this).attr('data-type'))
+				console.log($(this).attr('data-type'));
+					tipShow('敬请期待')
+				return;
 				if($(this).attr('data-type') == '22'){
 					$$.openWindow({
 						url: '../pages/new/homeActivity.html',

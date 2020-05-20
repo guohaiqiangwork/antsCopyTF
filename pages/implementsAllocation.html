@@ -170,7 +170,7 @@
 
 				_self = plus.webview.currentWebview();
 				console.log(_self.tabId)
-				if(_self.tabId){
+				if (_self.tabId) {
 					$('.allocation').css('display', 'none');
 					$('.receive').css('display', 'block');
 					obtainAllotRece(); //获取接收列表
@@ -188,7 +188,11 @@
 						$('.allocation_name').text(data.data.name)
 					}
 				});
-				funMyallot(); //查询我的同事
+				console.log(_self.urlFalg)
+				if (_self.tabId != 1) {
+					funMyallot(); //查询我的同事
+				}
+
 			}
 			// 查询我的同事
 			function funMyallot() {
@@ -244,7 +248,7 @@
 					$('.allocation').css('display', 'none');
 					$('.receive').css('display', 'block');
 					$('.receive').html('')
-					$('.nothing1').css('display','none')
+					$('.nothing1').css('display', 'none')
 					obtainAllotRece(); //获取接收列表
 				} else {
 					$('.allocation').css('display', 'block');

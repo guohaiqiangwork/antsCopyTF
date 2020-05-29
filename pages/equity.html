@@ -22,7 +22,7 @@
 		</header>
 		
 		<div class="content">
-			<img src="../assers/image/5117@2x.png" style="width: 100%;">
+			
 		</div>
 
 	</body>
@@ -49,6 +49,14 @@
 					scrollIndicator: 'none'
 				});
 				_self = plus.webview.currentWebview();
+				
+				getMemberBenefits(mui,function(data){
+					if(data.code == 200){
+						var a = '<img src="'+ data.data.pathUrl+'" style="width: 100%;" >';
+						$('.content').append(a);
+					}
+				})
+				
 				
 				
 			}

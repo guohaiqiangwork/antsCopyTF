@@ -817,6 +817,9 @@ header {
 .div_border_radius3 {
 	border-radius: .3rem;
 }
+.div_border_radius2 {
+	border-radius: .2rem;
+}
 
 .display_center {
 	justify-content: center;

@@ -6,7 +6,7 @@
  */
 // 全局变量定义  
 window.requserUrl = 'http://123.56.62.211:8080'; //测试环境
-
+// window.requserUrl = 'http://192.168.1.101'; //
 window.requserUrlShard = 'http://www.bjxrkj.com/';
 // 郭海强 start
 /**
@@ -221,7 +221,7 @@ function getBankFindAll(mui, dataBase, callback) {
  */
 function getBankSave(mui, dataBase, code, callback) {
 	console.log("dataBase: " + JSON.stringify(dataBase));
-	console.log("code=" + code);
+	console.log("code="+code);
 	mui.ajax(requserUrl + "/bank/addBank/" + code, {
 		timeout: 20000,
 		type: 'post',
@@ -642,7 +642,7 @@ function getMyAllot(mui, dataBase, callback) {
 	mui.ajax(requserUrl + "/mb/allot/" + plus.storage.getItem('memberId'), {
 		timeout: 20000,
 		type: 'get',
-		data: dataBase,
+		data:dataBase,
 		headers: {
 			'Authorization': "Bearer" + " " + plus.storage.getItem('Token'),
 			'client': 'APP',
@@ -975,7 +975,7 @@ function un_webPay(mui, dataBase, callback) {
 };
 // 支付密码校验
 function passwordCheck(mui, dataBase, callback) {
-	console.log("33333333==" + JSON.stringify(dataBase));
+	console.log("33333333=="+JSON.stringify(dataBase));
 	mui.ajax(requserUrl + "/account/passwordCheck/" + dataBase.memberId, {
 		timeout: 20000,
 		type: 'post',
@@ -1289,7 +1289,7 @@ function getPayTotalAmountView(mui, dataBase, callback) {
 	mui.ajax(requserUrl + "/payTotalAmountView", {
 		timeout: 20000,
 		type: 'get',
-		data: dataBase,
+		data:dataBase,
 		headers: {
 			'Authorization': "Bearer" + " " + plus.storage.getItem('Token'),
 			'client': 'APP',
@@ -1309,7 +1309,7 @@ function getPayTotalAmountView(mui, dataBase, callback) {
 };
 
 // 获取品牌getQueryAgentTeam
-function getQueryBrand(mui, callback) {
+function getQueryBrand(mui,callback) {
 	mui.ajax(requserUrl + "/queryBrand/" + plus.storage.getItem('memberId'), {
 		timeout: 20000,
 		type: 'get',
@@ -1331,7 +1331,7 @@ function getQueryBrand(mui, callback) {
 	});
 };
 // 获取代理
-function getQueryAgentTeam(mui, callback) {
+function getQueryAgentTeam(mui,callback) {
 	mui.ajax(requserUrl + "/mb/queryAgentParam", {
 		timeout: 20000,
 		type: 'get',
@@ -1375,7 +1375,7 @@ function getTotalAmountDetailView(mui, keywords, callback) {
 };
 
 // 获取代理
-function getMyAgentTeamDataCount(mui, callback) {
+function getMyAgentTeamDataCount(mui,callback) {
 	mui.ajax(requserUrl + "/myAgentTeamDataCount/" + plus.storage.getItem('memberId'), {
 		timeout: 20000,
 		type: 'get',
@@ -1398,7 +1398,7 @@ function getMyAgentTeamDataCount(mui, callback) {
 };
 
 // 获取我的页面数据
-function getPersonCenter(mui, callback) {
+function getPersonCenter(mui,callback) {
 	mui.ajax(requserUrl + "/personCenter/" + plus.storage.getItem('memberId'), {
 		timeout: 20000,
 		type: 'get',
@@ -1421,11 +1421,11 @@ function getPersonCenter(mui, callback) {
 };
 
 //我的收益数据
-function getPersonCenterTotalAmountView(mui, data, callback) {
+function getPersonCenterTotalAmountView(mui,data,callback) {
 	mui.ajax(requserUrl + "/personCenterTotalAmountView", {
 		timeout: 20000,
 		type: 'get',
-		data: data,
+		data:data,
 		headers: {
 			'Authorization': "Bearer" + " " + plus.storage.getItem('Token'),
 			'client': 'APP',
@@ -1465,7 +1465,7 @@ function getPsersonCenterTotalAmountDetail(mui, keywords, callback) {
 
 
 // 获取品牌列表 /
-function getQuyerBrandList(mui, callback) {
+function getQuyerBrandList(mui,callback) {
 	mui.ajax(requserUrl + "/quyerBrandList", {
 		timeout: 20000,
 		type: 'get',
@@ -1488,7 +1488,7 @@ function getQuyerBrandList(mui, callback) {
 };
 
 // 删除机具订单
-function getDeleteOrder(mui, data, callback) {
+function getDeleteOrder(mui,data,callback) {
 	mui.ajax(requserUrl + "/order/delete/" + data, {
 		timeout: 20000,
 		type: 'get',
@@ -1511,11 +1511,11 @@ function getDeleteOrder(mui, data, callback) {
 };
 
 // 删除商城订单
-function getDeleteOrderInte(mui, data, callback) {
+function getDeleteOrderInte(mui,data,callback) {
 	mui.ajax(requserUrl + "/integralOrder/deleteOrder", {
 		timeout: 20000,
 		type: 'get',
-		data: data,
+		data:data,
 		headers: {
 			'Authorization': "Bearer" + " " + plus.storage.getItem('Token'),
 			'client': 'APP',
@@ -1534,12 +1534,12 @@ function getDeleteOrderInte(mui, data, callback) {
 	});
 };
 // 删除消息单个
-function getDeleteMessage(mui, data, callback) {
+function getDeleteMessage(mui,data,callback) {
 	console.log(JSON.stringify(data))
 	mui.ajax(requserUrl + "/message/deleteMessage", {
 		timeout: 20000,
 		type: 'get',
-		data: data,
+		data:data,
 		headers: {
 			'Authorization': "Bearer" + " " + plus.storage.getItem('Token'),
 			'client': 'APP',
@@ -1558,11 +1558,11 @@ function getDeleteMessage(mui, data, callback) {
 	});
 };
 // 删除消息列表
-function getDeleteAll(mui, data, callback) {
+function getDeleteAll(mui,data,callback) {
 	mui.ajax(requserUrl + "/message/deleteAll", {
 		timeout: 20000,
 		type: 'get',
-		data: data,
+		data:data,
 		headers: {
 			'Authorization': "Bearer" + " " + plus.storage.getItem('Token'),
 			'client': 'APP',
@@ -1582,11 +1582,11 @@ function getDeleteAll(mui, data, callback) {
 };
 
 // 获取协议内容
-function getQueryProtocol(mui, data, callback) {
+function getQueryProtocol(mui,data,callback) {
 	mui.ajax(requserUrl + "/goods/queryProtocol", {
 		timeout: 20000,
 		type: 'get',
-		data: data,
+		data:data,
 		headers: {
 			'Authorization': "Bearer" + " " + plus.storage.getItem('Token'),
 			'client': 'APP',
@@ -1606,11 +1606,11 @@ function getQueryProtocol(mui, data, callback) {
 };
 
 // 获取入网图片
-function getQueryNetworkAccess(mui, data, callback) {
+function getQueryNetworkAccess(mui,data,callback) {
 	mui.ajax(requserUrl + "/queryNetworkAccess", {
 		timeout: 20000,
 		type: 'get',
-		data: data,
+		data:data,
 		headers: {
 			'Authorization': "Bearer" + " " + plus.storage.getItem('Token'),
 			'client': 'APP',
@@ -1630,11 +1630,11 @@ function getQueryNetworkAccess(mui, data, callback) {
 };
 
 // 查询是否有调拨机具
-function getQueryToolReminder(mui, data, callback) {
+function getQueryToolReminder(mui,data,callback) {
 	mui.ajax(requserUrl + "/goodsItmeAllot/queryToolReminder", {
 		timeout: 20000,
 		type: 'get',
-		data: data,
+		data:data,
 		headers: {
 			'Authorization': "Bearer" + " " + plus.storage.getItem('Token'),
 			'client': 'APP',
@@ -1654,7 +1654,7 @@ function getQueryToolReminder(mui, data, callback) {
 };
 
 // 获取版本号
-function getIosVersionNum(mui, callback) {
+function getIosVersionNum(mui,callback) {
 	mui.ajax(requserUrl + "/appVersionNumber/getIosVersionNum", {
 		timeout: 20000,
 		type: 'get',
@@ -1676,7 +1676,7 @@ function getIosVersionNum(mui, callback) {
 	});
 };
 //获取税费
-function getRate(mui, callback) {
+function getRate(mui,callback) {
 	mui.ajax(requserUrl + "/account/rate", {
 		timeout: 20000,
 		type: 'get',
@@ -1699,13 +1699,11 @@ function getRate(mui, callback) {
 };
 
 // 获取满刷奖励
-function getCash(mui, callback) {
+function getCash(mui,callback) {
 	mui.ajax(requserUrl + "/reach/cash", {
 		timeout: 20000,
 		type: 'get',
-		data: {
-			memberId: plus.storage.getItem('memberId')
-		},
+		data:{memberId:plus.storage.getItem('memberId')},
 		// data:{memberId:'1254710299945725953'},
 		headers: {
 			'Authorization': "Bearer" + " " + plus.storage.getItem('Token'),
@@ -1726,13 +1724,11 @@ function getCash(mui, callback) {
 };
 
 // 领取
-function getReceive(mui, data, callback) {
+function getReceive(mui,data,callback) {
 	mui.ajax(requserUrl + "/reach/receive", {
 		timeout: 20000,
 		type: 'get',
-		data: {
-			id: data
-		},
+		data:{id:data},
 		headers: {
 			'Authorization': "Bearer" + " " + plus.storage.getItem('Token'),
 			'client': 'APP',
@@ -1751,6 +1747,242 @@ function getReceive(mui, data, callback) {
 	});
 };
 
+
+// 机具入网
+// 获取省数据
+function getRwRegion(mui,callback) {
+	mui.ajax(requserUrl + "/rw/getRwRegion", {
+		timeout: 20000,
+		type: 'get',
+		headers: {
+			'Authorization': "Bearer" + " " + plus.storage.getItem('Token'),
+			'client': 'APP',
+		},
+		success: function(data) {
+			if (data.code == 200) {
+				callback && callback(data);
+			} else {
+				callback && callback(data);
+				tipShow(data.message);
+			}
+		},
+		error: function() {
+			console.log("服务异常，请稍后重试！");
+		}
+	});
+};
+// 获取市数据
+function getRwRegionNext(mui,code,callback) {
+	mui.ajax(requserUrl + "/rw/getRwRegionNext/" + code, {
+		timeout: 20000,
+		type: 'get',
+		headers: {
+			'Authorization': "Bearer" + " " + plus.storage.getItem('Token'),
+			'client': 'APP',
+		},
+		success: function(data) {
+			if (data.code == 200) {
+				callback && callback(data);
+			} else {
+				callback && callback(data);
+				tipShow(data.message);
+			}
+		},
+		error: function() {
+			console.log("服务异常，请稍后重试！");
+		}
+	});
+};
+// 获取区数据
+function getRwRegionNextB(mui,code,callback) {
+	mui.ajax(requserUrl + "/rw/getRwRegionNextB/" + code, {
+		timeout: 20000,
+		type: 'get',
+		headers: {
+			'Authorization': "Bearer" + " " + plus.storage.getItem('Token'),
+			'client': 'APP',
+		},
+		success: function(data) {
+			if (data.code == 200) {
+				callback && callback(data);
+			} else {
+				callback && callback(data);
+				tipShow(data.message);
+			}
+		},
+		error: function() {
+			console.log("服务异常，请稍后重试！");
+		}
+	});
+};
+
+// 获取行业类别
+function getRwMcc(mui,callback) {
+	mui.ajax(requserUrl + "/rw/rwMcc" , {
+		timeout: 20000,
+		type: 'get',
+		headers: {
+			'Authorization': "Bearer" + " " + plus.storage.getItem('Token'),
+			'client': 'APP',
+		},
+		success: function(data) {
+			if (data.code == 200) {
+				callback && callback(data);
+			} else {
+				callback && callback(data);
+				tipShow(data.message);
+			}
+		},
+		error: function() {
+			console.log("服务异常，请稍后重试！");
+		}
+	});
+};
+
+// 获取mcc
+function getRwMccNext(mui,code,callback) {
+	mui.ajax(requserUrl + "/rw/rwMccNext/" + code , {
+		timeout: 20000,
+		type: 'get',
+		headers: {
+			'Authorization': "Bearer" + " " + plus.storage.getItem('Token'),
+			'client': 'APP',
+		},
+		success: function(data) {
+			if (data.code == 200) {
+				callback && callback(data);
+			} else {
+				callback && callback(data);
+				tipShow(data.message);
+			}
+		},
+		error: function() {
+			console.log("服务异常，请稍后重试！");
+		}
+	});
+};
+
+// 获取营业范围
+function getRwMccNextDetails(mui,code,callback) {
+	mui.ajax(requserUrl + "/rw/rwMccNextDetails/" + code , {
+		timeout: 20000,
+		type: 'get',
+		headers: {
+			'Authorization': "Bearer" + " " + plus.storage.getItem('Token'),
+			'client': 'APP',
+		},
+		success: function(data) {
+			if (data.code == 200) {
+				callback && callback(data);
+			} else {
+				callback && callback(data);
+				tipShow(data.message);
+			}
+		},
+		error: function() {
+			console.log("服务异常，请稍后重试！");
+		}
+	});
+};
+
+// 获取机具编码
+function getMyPos(mui,data,callback) {
+	mui.ajax(requserUrl + "/rw/getMyPos", {
+		timeout: 20000,
+		type: 'post',
+		data: JSON.stringify(data),
+		contentType: "application/json;charsetset=UTF-8",
+		headers: {
+			'Authorization': "Bearer" + " " + plus.storage.getItem('Token'),
+			'client': 'APP',
+		},
+		success: function(data) {
+			if (data.code == 200) {
+				callback && callback(data);
+			} else {
+				callback && callback(data);
+				tipShow(data.message);
+			}
+		},
+		error: function() {
+			console.log("服务异常，请稍后重试！");
+		}
+	});
+};
+
+
+// 验证银行卡
+function getBankVerify(mui,data,callback) {
+	mui.ajax(requserUrl + "/network/bankVerify", {
+		timeout: 20000,
+		type: 'post',
+		data: JSON.stringify(data),
+		contentType: "application/json;charsetset=UTF-8",
+		headers: {
+			'Authorization': "Bearer" + " " + plus.storage.getItem('Token'),
+			'client': 'APP',
+		},
+		success: function(data) {
+			if (data.code == 200) {
+				callback && callback(data);
+			} else {
+				callback && callback(data);
+				tipShow(data.message);
+			}
+		},
+		error: function() {
+			console.log("服务异常，请稍后重试！");
+		}
+	});
+};
+
+// 个人入网操作
+function getAccess(mui,data,callback) {
+	mui.ajax(requserUrl + "/network/access", {
+		timeout: 60000,
+		type: 'post',
+		data: JSON.stringify(data),
+		contentType: "application/json;charsetset=UTF-8",
+		headers: {
+			'Authorization': "Bearer" + " " + plus.storage.getItem('Token'),
+			'client': 'APP',
+		},
+		success: function(data) {
+			if (data.code == 200) {
+				callback && callback(data);
+			} else {
+				callback && callback(data);
+				tipShow(data.message);
+			}
+		},
+		error: function() {
+			console.log("服务异常，请稍后重试！");
+		}
+	});
+};
+
+// 获取代理商权益
+function getMemberBenefits(mui,callback) {
+	mui.ajax(requserUrl + "/memberBenefits/getMemberBenefits", {
+		timeout:20000,
+		type: 'get',
+		headers: {
+			'Authorization': "Bearer" + " " + plus.storage.getItem('Token'),
+			'client': 'APP',
+		},
+		success: function(data) {
+			if (data.code == 200) {
+				callback && callback(data);
+			} else {
+				callback && callback(data);
+				tipShow(data.message);
+			}
+		},
+		error: function() {
+			console.log("服务异常，请稍后重试！");
+		}
+	});
+};
 
 
 
@@ -3628,9 +3860,9 @@ function get_cancelPay(mui, dataBase, callback) {
 };
 
 
-/* 机具 取消支付 */
+/* 机具 取消支付 */ 
 function jf_cancelPay(mui, orderId, callback) {
-	mui.ajax(requserUrl + "/order/cancelPay/" + orderId, {
+	mui.ajax(requserUrl + "/order/cancelPay/"+orderId, {
 		timeout: 20000,
 		type: 'get',
 		headers: {
